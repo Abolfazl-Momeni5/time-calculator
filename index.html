@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>محاسبه گر زمان کاری</title>
+    <link rel="stylesheet" href="./assets/style/app.css" />
+  </head>
+  <body>
+    <svg>
+      <symbol
+        id="creat"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 4.5v15m7.5-7.5h-15"
+        />
+      </symbol>
+      <symbol
+        id="setting"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z"
+        />
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+        />
+      </symbol>
+      <symbol
+        id="trash"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+        />
+      </symbol>
+      <symbol
+        id="clock"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+        />
+      </symbol>
+      <symbol
+        id="delete"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+        />
+      </symbol>
+      <symbol
+        id="close"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18 18 6M6 6l12 12"
+        />
+      </symbol>
+      <symbol
+        id="error"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
+        />
+      </symbol>
+    </svg>
+    <div class="time-calculator">
+      <div class="container">
+        <h1 class="font-pelak-bold text-xl sm:text-4xl mb-8">
+          محاسبه گر زمان کاری
+        </h1>
+        <header
+          class="time-calculator-header sticky top-[35px] w-full sm:h-[121px] p-2 sm:p-8 rounded-xl bg-zinc-600 text-base sm:text-xl font-pelak-bold"
+        >
+          <div
+            class="time-calculator-header__setting-btn-wrapper flex items-center justify-between"
+          >
+            <div
+              class="time-calculator-header__insert-btn w-[110px] sm:w-[201px] flex items-center justify-center p-1.5 sm:p-3.5 bg-stone-900 rounded-md gap-2 select-none cursor-pointer"
+            >
+              درج زمان
+              <svg class="w-6 h-6">
+                <use href="#creat"></use>
+              </svg>
+            </div>
+
+            <div
+              class="time-calculator-header__setting-btn w-[110px ] sm:w-[201px] flex relative items-center justify-center p-1.5 sm:p-3.5 bg-zinc-800 rounded-md gap-2 select-none cursor-pointer"
+            >
+              تنظیمات
+              <svg class="w-6 h-6">
+                <use href="#setting"></use>
+              </svg>
+              <ul
+                class="time-calculator-menu absolute w-[101px] sm:w-[201px] invisible flex flex-col bg-zinc-800 rounded-md top-10 sm:top-16 right-0 font-pelak-medium text-xs sm:text-sm p-1.5 sm:p-4 gap-3 transition-all duration-200"
+              >
+                <li
+                  class="time-calculator-menu__item remove-all flex items-center w-full cursor-pointer p-1 rounded-sm hover:bg-stone-900"
+                >
+                  <div
+                    class="time-calculator__item-icon-wrapper ml-2 pl-1 border-l-2 border-zinc-600/70"
+                  >
+                    <svg class="sm:w-6 w-5 h-5 sm:h-6">
+                      <use href="#trash"></use>
+                    </svg>
+                  </div>
+                  حذف کل
+                </li>
+                <li
+                  class="time-calculator-menu__item result-btn flex items-center w-full cursor-pointer p-1 rounded-sm hover:bg-stone-900"
+                >
+                  <div
+                    class="time-calculator__item-icon-wrapper ml-2 pl-1 border-l-2 border-zinc-600/70"
+                  >
+                    <svg class="sm:w-6 w-5 h-5 sm:h-6">
+                      <use href="#clock"></use>
+                    </svg>
+                  </div>
+                  جمع ساعت ها
+                </li>
+              </ul>
+            </div>
+          </div>
+        </header>
+        <main
+          class="time-calculator-main w-full bg-stone-900 mt-9 rounded-xl p-5 font-medium text-xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 items-center justify-center justify-items-center gap-7"
+        >
+          <!-- data loaded from js -->
+        </main>
+        <div
+          class="modal-result fixed top-[155px] z-20 pt-4 p-[41px] border-2 rounded-xl border-zinc-600 hidden flex-col w-[340px] sm:w-[507px] bg-zinc-800"
+        >
+          <header
+            class="moadl-result__header border-b border-zinc-600/70 pb-3 cursor-pointer"
+          >
+            <div
+              class="modal-result__close-icon w-[37px] h-[31px] bg-taupe-700 rounded-sm flex top-0 items-center justify-center select-none"
+            >
+              <svg class="w-6 h-6">
+                <use href="#close"></use>
+              </svg>
+            </div>
+          </header>
+          <main class="modal__main mt-6 text-xl">
+            <div class="modal__wrapper flex flex-col w-full">
+              <h2 class="mb-4 text-taupe-400">جمع کل:</h2>
+              <span
+                class="mt-4 mb-4 text-2xl font-pelak-bold text-zinc-600 flex items-center justify-center gap-2"
+              >
+                <svg class="w-8 h-8">
+                  <use href="#clock"></use>
+                </svg>
+                <p class="modal-result__txt">22 ساعت</p>
+              </span>
+            </div>
+          </main>
+          <footer class="mt-12 flex items-center gap-2.5 text-xl justify-end">
+            <button
+              class="modal-result__btn w-[99px] h-[44px] flex items-center justify-center bg-stone-900 rounded-md select-none cursor-pointer outline-0 border-0 focus:border-2 focus:border-zinc-700 transition-normal"
+            >
+              بستن
+            </button>
+          </footer>
+        </div>
+        <div
+          class="modal fixed z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)] max-w-[507px] max-h-[calc(100dvh-2rem)] overflow-y-auto p-5 sm:p-[41px] border-2 rounded-xl border-zinc-600 hidden flex-col bg-zinc-800"
+        >
+          <header
+            class="moadl__header border-b border-zinc-600/70 pb-3 cursor-pointer"
+          >
+            <div
+              class="modal__header-close-icon w-[37px] h-[31px] top-0 bg-taupe-700 rounded-sm flex items-center justify-center select-none"
+            >
+              <svg class="w-6 h-6">
+                <use href="#close"></use>
+              </svg>
+            </div>
+          </header>
+          <main class="modal__main mt-6 text-xl">
+            <div class="modal__main-input-box-wrapper w-full">
+              <h2 class="mb-4 text-taupe-400">ساعت ورود:</h2>
+              <div
+                class="input-hours flex items-center flex-col border-b border-zinc-600/70 pb-4"
+              >
+                <div
+                  class="input-hours__wraper w-full flex flex-row items-center justify-between"
+                >
+                  <input
+                    type="number"
+                    id="input-min"
+                    min="0"
+                    max="59"
+                    placeholder="19"
+                    class="block w-[120px] sm:w-[159px] text-center bg-zinc-600 p-3 rounded-sm outline-0 border-0 focus:outline-2 focus:outline-zinc-500 transition-color"
+                  />
+                  <span>:</span>
+                  <input
+                    type="number"
+                    id="input-hour"
+                    placeholder="05"
+                    min="0"
+                    max="23"
+                    class="block w-[120px] sm:w-[159px] text-center bg-zinc-600 p-3 rounded-sm outline-0 border-0 focus:outline-2 focus:outline-zinc-500 transition-color"
+                  />
+                </div>
+                <div
+                  class="input-hours__txt-wrapper w-full flex flex-row items-center justify-between mt-2.5 text-sm"
+                >
+                  <label for="input-min">دقیقه</label>
+                  <label for="input-hour">ساعت</label>
+                </div>
+
+                <div
+                  class="error-massege1 mt-7 text-sm sm:text-base text-red-500 hidden items-center justify-center gap-1.5"
+                >
+                  <svg class="w-5 h-5">
+                    <use href="#error"></use>
+                  </svg>
+                  <p id="error-txt1">
+                    ساعت باید بین 0 تا 23 و دقیقه بین 0 تا 59 باشد.
+                  </p>
+                </div>
+              </div>
+
+              <h2 class="mt-4 mb-4 text-taupe-400">ساعت خروج:</h2>
+              <div class="output-hours">
+                <div
+                  class="output-hours__wraper w-full flex flex-row items-center justify-between"
+                >
+                  <input
+                    type="number"
+                    id="output-min"
+                    placeholder="25"
+                    min="0"
+                    max="59"
+                    class="block w-[120px] sm:w-[159px] text-center bg-zinc-600 p-3 rounded-sm outline-0 border-0 focus:outline-2 focus:outline-zinc-500 transition-color"
+                  />
+                  <span>:</span>
+                  <input
+                    type="number"
+                    id="output-hour"
+                    placeholder="08"
+                    min="0"
+                    max="23"
+                    class="block w-[120px] sm:w-[159px] text-center bg-zinc-600 p-3 rounded-sm outline-0 border-0 focus:outline-2 focus:outline-zinc-500 transition-color"
+                  />
+                </div>
+                <div
+                  class="output-hours__txt-wraper text-sm w-full flex flex-row items-center justify-between mt-2.5"
+                >
+                  <label for="output-min">دقیقه</label>
+                  <label for="output-hour">ساعت</label>
+                </div>
+                <div
+                  class="error-massege2 mt-7 text-sm sm:text-base text-red-500 hidden items-center justify-center gap-1.5"
+                >
+                  <svg class="w-5 h-5">
+                    <use href="#error"></use>
+                  </svg>
+                  <p id="error-txt2">
+                    ساعت باید بین 0 تا 23 و دقیقه بین 0 تا 59 باشد.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </main>
+          <footer class="mt-12 flex items-center gap-2.5 text-xl justify-end">
+            <button
+              class="modal__btn modal__btn-cancel w-[99px] h-[44px] flex items-center justify-center bg-taupe-700 rounded-md select-none cursor-pointer outline-0 border-0 focus:border-2 focus:border-taupe-600 transition-normal"
+            >
+              انصراف
+            </button>
+            <button
+              class="modal__btn btn-submit w-[99px] h-[44px] flex items-center justify-center bg-stone-900 rounded-md select-none cursor-pointer outline-0 border-0 focus:border-2 focus:border-zinc-700 transition-normal"
+            >
+              ثبت
+            </button>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <div
+      class="layer w-full h-full z-10 hidden top-0 left-0 backdrop-blur-sm"
+    ></div>
+    <script src="./assets/script/app.js"></script>
+  </body>
+</html>

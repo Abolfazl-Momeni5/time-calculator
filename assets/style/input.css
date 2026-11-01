@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-size: 62.5%;
+    line-height: 1.3;
+    background-color: #1e1e1e;
+    font-family: "PelakFA-Medium";
+    color: #ffff;
+  }
+  @font-face {
+    font-family: "PelakFA-Medium";
+    src: url(/public/fonts/PelakFA-Medium.woff2);
+  }
+  @font-face {
+    font-family: "PelakFA-Bold";
+    src: url(/public/fonts/PelakFA-Bold.woff2);
+  }
+}
+@layer components {
+  .container {
+    width: 100%;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  @media (min-width: 576px) {
+    .container {
+      width: 54rem;
+    }
+  }
+  @media (min-width: 768px) {
+    .container {
+      width: 72rem;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      width: 96rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      width: 114rem;
+    }
+  }
+  @media (min-width: 1400px) {
+    .container {
+      width: 137rem;
+    }
+  }
+
+  .show-menu {
+    visibility: visible !important;
+  }
+}
+@theme {
+  --font-pelak-bold: "PelakFA-Bold";
+  --font-pelak-medium: "PelakFA-Medium";
+}
