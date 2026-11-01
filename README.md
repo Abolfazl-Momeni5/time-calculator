@@ -17,7 +17,7 @@ Time Calculator allows users to enter their arrival and departure times and easi
 * Tailwind CSS
 
 ### 📸 Preview
-![preview of project]("/assets/images/preview.png")
+![preview of project]("../../assets/images/preview.png")
 
 ### 🚀 Getting Started
 
